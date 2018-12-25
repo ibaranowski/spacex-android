@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    def dependency = rootProject.ext.dependencies
+
+    implementation dependency.kotlinStdlib
+
+    implementation dependency.javaxInject
+
+    implementation dependency.rxJava
+    implementation dependency.rxKotlin
+
+    implementation dependency.timber
+}

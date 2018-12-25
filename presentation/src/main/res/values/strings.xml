@@ -1,0 +1,12 @@
+<resources>
+    
+    <string name="app_name">spacex rockets</string>
+
+    <string name="refresh">refresh</string>
+    <string name="active">active</string>
+    <string name="welcome">Welcome</string>
+
+    <string name="waiting_for_data">waiting for data&#8230;</string>
+
+
+</resources>

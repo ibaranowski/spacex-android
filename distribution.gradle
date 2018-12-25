@@ -1,0 +1,19 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+task qaToFabric(dependsOn: "assembleQaRelease") {
+
+    doLast {
+
+        def groupName = "qa"
+        def releaseNotes = ""
+
+        def task = tasks.getByName("crashlyticsUploadDistributionQaRelease")
+        task.ext.betaDistributionReleaseNotes = releaseNotes
+        task.ext.betaDistributionGroupAliases = groupName
+        task.execute()
+    }
+}

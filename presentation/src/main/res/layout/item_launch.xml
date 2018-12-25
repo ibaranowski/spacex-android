@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.spacex.rockets.presentation.screens.launches.list.LaunchItemViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@{viewModel.year}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/missionImage"
+            app:visibility="@{viewModel.header}"
+            tools:text="header"/>
+
+        <ImageView
+            android:id="@+id/missionImage"
+            android:layout_width="30dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:src="@{viewModel.missionImage}"
+            tools:src="@drawable/ic_rocket_1"
+            />
+
+
+        <TextView
+            android:id="@+id/missionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            app:textColorId="@{viewModel.color}"
+            android:text="@{viewModel.missionName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/missionImage"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            tools:text="mission name"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.launchDate}"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            app:layout_constraintStart_toEndOf="@id/missionName"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="date"/>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--100% — FF-->
+    <!--95% — F2-->
+    <!--90% — E6-->
+    <!--85% — D9-->
+    <!--80% — CC-->
+    <!--75% — BF-->
+    <!--70% — B3-->
+    <!--65% — A6-->
+    <!--60% — 99-->
+    <!--55% — 8C-->
+    <!--50% — 80-->
+    <!--45% — 73-->
+    <!--40% — 66-->
+    <!--35% — 59-->
+    <!--30% — 4D-->
+    <!--25% — 40-->
+    <!--20% — 33-->
+    <!--15% — 26-->
+    <!--10% — 1A-->
+    <!--5% — 0D-->
+    <!--0% — 00-->
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="alert_content">#80000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Theme colors -->
+    <color name="primary">#0088cc</color>
+    <color name="primary_dark">#006699</color>
+    <color name="color_accent">#0088cc</color>
+    <color name="primary_text">#ffffff</color>
+    <color name="primary_text_inverse">#000000</color>
+    <color name="primary_highlight">#800088cc</color>
+    <color name="progress_bar_layout">#80111111</color>
+
+    <!--App colors-->
+    <color name="app_gray">#999</color>
+    <color name="app_gray_light">#dddddd</color>
+    <color name="app_gray_light_pressed">#cccccc</color>
+    <color name="app_red">#d2322d</color>
+    <color name="app_green">@android:color/holo_green_light</color>
+    <color name="app_yellow">#ffcc00</color>
+    <color name="app_yellow_pressed">#dfb50c</color>
+
+</resources>

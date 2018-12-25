@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        defaultPublishConfig 'release'
+        publishNonDefault true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        debug.java.srcDirs += 'src/main/kotlin'
+        release.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    def dependency = rootProject.ext.dependencies
+
+    implementation dependency.kotlinStdlib
+
+    implementation dependency.javaxInject
+
+    api dependency.retrofit
+    api dependency.retrofitGson
+    api dependency.retrofitRx
+    api dependency.okhttp
+    api dependency.okhttpLogging
+
+    implementation dependency.rxJava
+
+    implementation dependency.timber
+
+    api dependency.room
+    api dependency.roomRxjava2
+    kapt dependency.roomCompiler
+
+    implementation project(path: ':domain')
+}

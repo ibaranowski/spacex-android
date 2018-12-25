@@ -1,0 +1,17 @@
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
+    </style>
+
+    <style name="AppAnimation.Activity" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/screen_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/screen_fade_out</item>
+    </style>
+
+    <style name="ProgressBarLayout">
+        <item name="android:background">@color/progress_bar_layout</item>
+    </style>
+
+
+</resources>

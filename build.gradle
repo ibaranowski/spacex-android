@@ -1,0 +1,137 @@
+buildscript {
+    ext.kotlin_version = '1.3.11'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+ext {
+    // ===== sdk and tools =====
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+    minSdkVersion = 19
+    targetSdkVersion = 27
+
+    // ===== dependencies versions =====
+
+    // tests
+    junitVersion = '4.12'
+
+    androidSupportVersion = '28.0.0'
+
+    // architecture
+    archComponents = '1.1.1'
+
+    // Injection
+    daggerVersion = '2.13'
+    javaInjectVersion = '1'
+
+    // databinding
+    dataBindingVersion = '3.2.1'
+
+    cicerone = '2.1.0'
+
+    // network
+    retrofitVersion = '2.3.0'
+    okhttpVersion = '3.9.1'
+
+    // rx
+    rxVersion = '2.1.5'
+    rxAndroidVersion = '2.0.1'
+    rxRelay = '2.0.0'
+    rxKotlin = '2.1.0'
+    rxBindingKotlinVersion = '2.0.0'
+    rxPermissionsVersion = '0.9.4@aar'
+    rxLifecycleVersion = '2.2.1'
+
+    // ui related
+    constraintLayoutVersion = '1.1.0-beta2'
+    glideVersion = '4.3.1'
+
+    // development
+    timberVersion = '4.5.1'
+
+    reactiveNetworkVersion = '0.12.3'
+
+    anyChartVersion = 'v3.1.0-alpha'
+
+
+
+
+    dependencies = [
+
+            // kotlin
+            kotlinStdlib:           "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+
+            // supports
+            supportV4:              "com.android.support:support-v4:$androidSupportVersion",
+            supportDesign:          "com.android.support:design:$androidSupportVersion",
+            supportCompatV7:        "com.android.support:appcompat-v7:$androidSupportVersion",
+
+            // tests
+            junit:                  "junit:junit:$junitVersion",
+
+            // architecture
+            archComponentsExtensions:"android.arch.lifecycle:extensions:$archComponents",
+            archComponentsCompiler:  "android.arch.lifecycle:compiler:$archComponents",
+            cicerone:                "ru.terrakok.cicerone:cicerone:$cicerone",
+
+            // databinding
+            dataBindingCompiler:    "androidx.databinding:databinding-compiler:$dataBindingVersion",
+
+            // dagger
+            daggerCompiler:         "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger:                 "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroidSupport:   "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion",
+            javaxInject:            "javax.inject:javax.inject:${javaInjectVersion}",
+
+            // network
+            retrofit:               "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson:           "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRx:             "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            okhttp:                 "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            okhttpLogging:          "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            reactiveNetwork:        "com.github.pwittchen:reactivenetwork-rx2:$reactiveNetworkVersion",
+
+            // rx
+            rxJava:                 "io.reactivex.rxjava2:rxjava:$rxVersion",
+            rxAndroid:              "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxRelay:                "com.jakewharton.rxrelay2:rxrelay:$rxRelay",
+            rxKotlin:               "io.reactivex.rxjava2:rxkotlin:$rxKotlin",
+            rxBindingKotlin:        "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxBindingKotlinVersion",
+            rxPermissions:          "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
+
+            // ui related
+            constraintLayout:       "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+            glide:                  "com.github.bumptech.glide:glide:$glideVersion",
+            glideCompiler:          "com.github.bumptech.glide:compiler:$glideVersion",
+
+            // development
+            timber:                 "com.jakewharton.timber:timber:$timberVersion",
+
+            graphView : "com.github.PhilJay:MPAndroidChart:$anyChartVersion",
+
+            // database
+            room:                    "android.arch.persistence.room:runtime:$archComponents",
+            roomCompiler:            "android.arch.persistence.room:compiler:$archComponents",
+            roomRxjava2:             "android.arch.persistence.room:rxjava2:$archComponents"
+    ]
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
